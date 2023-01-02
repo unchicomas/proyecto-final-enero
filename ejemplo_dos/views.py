@@ -22,40 +22,40 @@ class PostListar(ListView):
 
 class PostCrear(LoginRequiredMixin, CreateView):
     model = Post
-    success_url = reverse_lazy("ejemplo-dos-listar")
+    success_url = reverse_lazy("mi-blog-listar")
     fields = '__all__'
 
 class PostBorrar(LoginRequiredMixin, DeleteView):
     model = Post
-    success_url = reverse_lazy("ejemplo-dos-listar")
+    success_url = reverse_lazy("mi-blog-listar")
 
 class PostActualizar(LoginRequiredMixin, UpdateView):
     model = Post
-    success_url = reverse_lazy("ejemplo-dos-listar")
+    success_url = reverse_lazy("mi-blog-listar")
     fields = "__all__"
 
 class UserSignUp(CreateView):
     form_class = UsuarioForm
     template_name = 'registration/signup.html'
-    success_url = reverse_lazy('ejemplo-dos-listar')
+    success_url = reverse_lazy('mi-blog-listar')
 
-#http://localhost:8000/ejemplo-dos/login/?next=/ejemplo-dos/listar/
+
 class UserLogin(LoginView):
-    next_page = reverse_lazy('ejemplo-dos-listar')
+    next_page = reverse_lazy('mi-blog-listar')
 
 class UserLogout(LogoutView):
-    next_page = reverse_lazy('ejemplo-dos-listar')
+    next_page = reverse_lazy('mi-blog-listar')
 
 class AvatarActualizar(UpdateView):
     model = Avatar
     fields = ['imagen']
-    success_url = reverse_lazy('ejemplo-dos-listar')
+    success_url = reverse_lazy('mi-blog-listar')
 
 
 class UserActualizar(UpdateView):
     model = User
     fields = ['first_name', 'last_name', 'email']
-    success_url = reverse_lazy('ejemplo-dos-listar')
+    success_url = reverse_lazy('mi-blog-listar')
 
 
 class MensajeDetalle(LoginRequiredMixin, DetailView):
@@ -66,9 +66,9 @@ class MensajeListar(LoginRequiredMixin, ListView):
 
 class MensajeCrear(CreateView):
     model = Mensaje
-    success_url = reverse_lazy("ejemplo-dos-mensajes-crear")
+    success_url = reverse_lazy("mi-blog-mensajes-crear")
     fields = ['nombre', 'email', 'texto']
 
 class MensajeBorrar(LoginRequiredMixin, DeleteView):
     model = Mensaje
-    success_url = reverse_lazy("ejemplo-dos-mensajes-listar")
+    success_url = reverse_lazy("mi-blog-mensajes-listar")
