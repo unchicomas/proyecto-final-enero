@@ -23,7 +23,7 @@ from ejemplo.views import (index, saludar_a, sumar,
                             BuscarFamiliar, AltaFamiliar,
                             ActualizarFamiliar, BorrarFamiliar,
                             FamiliarList, FamiliarCrear, FamiliarBorrar, FamiliarActualizar, FamiliarDetalle)
-from ejemplo_dos.views import (index, PostDetalle, PostListar, 
+from ejemplo_dos.views import (index, about, PostDetalle, PostListar, 
                                PostCrear, PostBorrar, PostActualizar,
                                UserSignUp, UserLogin, UserLogout, 
                                AvatarActualizar, UserActualizar, MensajeCrear, MensajeListar, MensajeDetalle )
@@ -45,6 +45,8 @@ urlpatterns = [
     path('mi-blog/mensajes/crear/', MensajeCrear.as_view(), name="mi-blog-mensajes-crear"),
     path('mi-blog/mensajes/<int:pk>/detalle/', MensajeDetalle.as_view(), name="mi-blog-mensajes-detalle"),
     path('mi-blog/mensajes/listar/', MensajeListar.as_view(), name="mi-blog-mensajes-listar"),
+    path('mi-blog/about', about, name="about"),
+    
 ]
 
 
